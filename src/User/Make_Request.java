@@ -1,13 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
 package User;
 
-import Admin.Admin_Add;
-import Admin.Admin_OfficerList;
-import Admin.Make_Report;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,24 +28,21 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import login.Login;
-import User.View_Correction;
-import User.View_Your_Request;
-import User.View_Family_Members;
-import User.Make_Request;
-import javafx.scene.control.DatePicker;
 
 /**
  *
- * @author user
+ * @author dell
  */
-public class View_Correction extends Application {
-    Stage S1;
+public class Make_Request extends Application {
+    
+     Stage S1;
         TableView table=new TableView();
     @Override
          public void start(Stage stage) {
@@ -140,24 +133,8 @@ public class View_Correction extends Application {
         HBox horiz=new HBox(15);
         Label H=new Label("Correction Requests");
         H.setFont(Font.font("Garamond", FontWeight.BOLD, 30));
-        H.setPadding(new Insets(5, 0, 0, 200));
-        table.setEditable(true);
-        TableColumn FristName =new TableColumn("ID");
-        TableColumn SecondName =new TableColumn("Name");
-        SecondName.setPrefWidth(500);
-        table.getColumns().addAll(FristName,SecondName);
-        table.setMinHeight(800);
-        table.setMinWidth(900);
-        
-        ScrollPane scrollPane = new ScrollPane();
-        scrollPane.setContent(table);
-        scrollPane.pannableProperty().set(true);
-        scrollPane.fitToWidthProperty().set(true);
-        scrollPane.fitToHeightProperty().set(true);
-        scrollPane.setPrefHeight(300);
-        scrollPane.setMaxWidth(900);
-        scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.ALWAYS);
-        scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.ALWAYS);
+        H.setPadding(new Insets(5, 0, 0, 250));
+
         /////Name field//////
         HBox Name=new HBox(30);
         Label l1=new Label("Name : ");
@@ -181,13 +158,6 @@ public class View_Correction extends Application {
         ComboBox State=new ComboBox();
         State.setPrefWidth(150);
         state.getChildren().addAll(s1,State);
-        //////education///////////////
-        HBox Education=new HBox(20);
-        Label e1=new Label("Education: ");
-        l2.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
-        ComboBox edu=new ComboBox();
-        edu.setPrefWidth(150);
-        Education.getChildren().addAll(e1,edu);
         //////email //////////
         HBox Email = new HBox(40);
         Label email =new Label("Email : ");
@@ -238,7 +208,7 @@ public class View_Correction extends Application {
         ph.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
         TextField Occupat=new TextField();
         Occupat.setStyle("-fx-background-radius: 30px ;");
-        Occupat.setPromptText("Occupation");
+        Occupat.setPromptText("Phone");
         Occupat.setMaxWidth(300);
         Occupation.getChildren().addAll(O,Occupat);
         ///////////////////////////////////////
@@ -247,19 +217,14 @@ public class View_Correction extends Application {
         ph.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
         TextField Addr=new TextField();
         Addr.setStyle("-fx-background-radius: 30px ;");
-        Addr.setPromptText("Address");
+        Addr.setPromptText("Phone");
         Addr.setMaxWidth(300);
         Address.getChildren().addAll(A,Addr);
-        //////Date////////////////
-        HBox Dt =new HBox(30);
-        Label data=new Label("Date : ");
-        DatePicker Date=new DatePicker();
-        Dt.getChildren().addAll(data,Date);
         //////////////////button///////
         HBox B=new HBox(100);
-        B.setPadding(new Insets(10, 0, 0, 120));
-        Button D=new Button("Reject");
-        Button U=new Button("Accept");
+        B.setPadding(new Insets(10, 0, 0, 80));
+        Button D=new Button("Delete Officer");
+        Button U=new Button("Update Officer");
         D.setStyle("-fx-background-radius: 300px ;-fx-background-color:Red; ");
         U.setStyle("-fx-background-radius: 300px ;-fx-background-color:Orange;");
         D.setMinWidth(120);
@@ -270,24 +235,23 @@ public class View_Correction extends Application {
         U.setTextFill(javafx.scene.paint.Color.BLACK);
         B.getChildren().addAll(D,U);
         ////////////////////////
-        NameField.getChildren().addAll(Name,area,state,Education,Email,User);
-        PassField.getChildren().addAll(S,Occupation,Address,Dt,mobile,password);
+        NameField.getChildren().addAll(Name,area,state,Email,User);
+        PassField.getChildren().addAll(S,Occupation,Address,mobile,password);
         horiz.getChildren().addAll(NameField,PassField);
-        section2.getChildren().addAll(H,scrollPane,horiz,B);
+        section2.getChildren().addAll(H,horiz,B);
         all.add(section1, 0, 0);
         all.add(section2, 1, 0);
         all.setBackground(new Background(new BackgroundFill(javafx.scene.paint.Color.web("#a5cee5"), CornerRadii.EMPTY, Insets.EMPTY)));
 
         
         Scene scene = new Scene(all,800,700);           
-        stage.setScene(scene);;
+        stage.setScene(scene);
         stage.setTitle("User Screen");
         stage.setResizable(false);
         
         stage.show();
         S1=stage;
     }
-
     /**
      * @param args the command line arguments
      */
