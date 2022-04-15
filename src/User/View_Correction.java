@@ -134,10 +134,12 @@ public class View_Correction extends Application {
 //second section
 
         VBox section2 = new VBox(15);
-        section2.setPrefSize(600, 500);
+        section2.setPrefSize(700, 550);
+        //section2.setPadding(new Insets(5, 0, 0, 20));
         VBox NameField=new VBox(15);
         VBox PassField=new VBox(20);
-        HBox horiz=new HBox(15);
+        HBox horiz=new HBox(50);
+        horiz.setPadding(new Insets(5, 0, 0, 25));
         Label H=new Label("Correction Requests");
         H.setFont(Font.font("Garamond", FontWeight.BOLD, 30));
         H.setPadding(new Insets(5, 0, 0, 200));
@@ -168,7 +170,7 @@ public class View_Correction extends Application {
         name.setMaxWidth(300);
         Name.getChildren().addAll(l1,name);
         ///////Area////////////
-        HBox area=new HBox(50);
+        HBox area=new HBox(55);
         Label l2=new Label("Area: ");
         l2.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
         ComboBox Area=new ComboBox();
@@ -177,14 +179,14 @@ public class View_Correction extends Application {
         /////////////State//////////////////
         HBox state=new HBox(50);
         Label s1=new Label("State: ");
-        l2.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
+        s1.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
         ComboBox State=new ComboBox();
         State.setPrefWidth(150);
         state.getChildren().addAll(s1,State);
         //////education///////////////
-        HBox Education=new HBox(20);
+        HBox Education=new HBox(15);
         Label e1=new Label("Education: ");
-        l2.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
+        e1.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
         ComboBox edu=new ComboBox();
         edu.setPrefWidth(150);
         Education.getChildren().addAll(e1,edu);
@@ -218,6 +220,7 @@ public class View_Correction extends Application {
         ///////////sex /////////////
         HBox S=new HBox(50);
         Label s =new Label("SEX :");
+        s.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
         ToggleGroup tg = new ToggleGroup();
         RadioButton Male=new RadioButton("Male: ");
         RadioButton Female=new RadioButton("Female");
@@ -235,7 +238,7 @@ public class View_Correction extends Application {
         ///////////////////////////////////
         HBox Occupation =new HBox(10);
         Label O=new Label("Occupation : ");
-        ph.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
+        O.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
         TextField Occupat=new TextField();
         Occupat.setStyle("-fx-background-radius: 30px ;");
         Occupat.setPromptText("Occupation");
@@ -244,22 +247,23 @@ public class View_Correction extends Application {
         ///////////////////////////////////////
         HBox Address =new HBox(30);
         Label A=new Label("Address : ");
-        ph.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
+        A.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
         TextField Addr=new TextField();
         Addr.setStyle("-fx-background-radius: 30px ;");
         Addr.setPromptText("Address");
         Addr.setMaxWidth(300);
         Address.getChildren().addAll(A,Addr);
         //////Date////////////////
-        HBox Dt =new HBox(30);
+        HBox Dt =new HBox(40);
         Label data=new Label("Date : ");
+        data.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
         DatePicker Date=new DatePicker();
         Dt.getChildren().addAll(data,Date);
         //////////////////button///////
         HBox B=new HBox(100);
-        B.setPadding(new Insets(10, 0, 0, 120));
-        Button D=new Button("Reject");
-        Button U=new Button("Accept");
+        B.setPadding(new Insets(10, 0, 0, 150));
+        Button D=new Button(" Reject ");
+        Button U=new Button(" Accept ");
         D.setStyle("-fx-background-radius: 300px ;-fx-background-color:Red; ");
         U.setStyle("-fx-background-radius: 300px ;-fx-background-color:Orange;");
         D.setMinWidth(120);
@@ -279,7 +283,7 @@ public class View_Correction extends Application {
         all.setBackground(new Background(new BackgroundFill(javafx.scene.paint.Color.web("#a5cee5"), CornerRadii.EMPTY, Insets.EMPTY)));
 
         
-        Scene scene = new Scene(all,800,700);           
+        Scene scene = new Scene(all,900,700);           
         stage.setScene(scene);;
         stage.setTitle("User Screen");
         stage.setResizable(false);

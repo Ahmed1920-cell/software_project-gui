@@ -11,6 +11,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -127,104 +128,136 @@ public class Make_Request extends Application {
 //second section
 
         VBox section2 = new VBox(15);
-        section2.setPrefSize(600, 500);
+        section2.setPrefSize(700, 500);
         VBox NameField=new VBox(15);
         VBox PassField=new VBox(20);
-        HBox horiz=new HBox(15);
-        Label H=new Label("Correction Requests");
-        H.setFont(Font.font("Garamond", FontWeight.BOLD, 30));
-        H.setPadding(new Insets(5, 0, 0, 250));
+        HBox horiz=new HBox(50);
+        Label H=new Label("Add New Family Member");
+        H.setFont(Font.font("Garamond", FontWeight.EXTRA_BOLD, 30));
+        H.setPadding(new Insets(50, 0, 75, 140));
 
         /////Name field//////
         HBox Name=new HBox(30);
-        Label l1=new Label("Name : ");
-        l1.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
+        Label l1=new Label("Name :");
+        l1.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 20));
         TextField name =new TextField();
         name.setPromptText("Name");
-        name.setStyle("-fx-background-radius: 30px ;");
-        name.setMaxWidth(300);
+        name.setStyle("-fx-background-radius: 10px ;");
+        name.setPrefSize(150, 23);
         Name.getChildren().addAll(l1,name);
+        Name.setPadding(new Insets(0, 20, 25, 10)); 
         ///////Area////////////
         HBox area=new HBox(50);
-        Label l2=new Label("Area: ");
-        l2.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
+        Label l2=new Label("Area:");
+        l2.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 16));
         ComboBox Area=new ComboBox();
         Area.setPrefWidth(150);
         area.getChildren().addAll(l2,Area);
+        area.setPadding(new Insets(0, 20, 25, 10));
         /////////////State//////////////////
         HBox state=new HBox(50);
         Label s1=new Label("State: ");
-        l2.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
+        s1.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 16));
         ComboBox State=new ComboBox();
         State.setPrefWidth(150);
         state.getChildren().addAll(s1,State);
+        state.setPadding(new Insets(0, 20, 25, 10));
         //////email //////////
         HBox Email = new HBox(40);
         Label email =new Label("Email : ");
-        email.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
+        email.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 16));
         TextField user=new TextField();
         user.setStyle("-fx-background-radius: 30px ;");
         user.setPromptText("Email");
         user.setMaxWidth(300);
         Email.getChildren().addAll(email,user);
+        Email.setPadding(new Insets(0, 20, 25, 10));
         ////////////username/////////////
         HBox User=new HBox(1);
         Label u =new Label("User Name : ");
-        u.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
+        u.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 16));
         TextField user1=new TextField();
         user1.setStyle("-fx-background-radius: 30px ;");
         user1.setPromptText("UserName");
         user1.setMaxWidth(300);
         User.getChildren().addAll(u,user1);
+        User.setPadding(new Insets(0, 20, 25, 10));
         /////////// password /////////////
         HBox password =new HBox(10);
         Label pass =new Label("Password : ");
-        pass.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 16));
+        pass.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 16));
         PasswordField P=new PasswordField();
         P.setMaxWidth(300);
         P.setStyle("-fx-background-radius: 30px ;");
         P.setPromptText("Password");
         password.getChildren().addAll(pass,P);
+        password.setPadding(new Insets(0, 20, 25, 10));
         ///////////sex /////////////
         HBox S=new HBox(50);
         Label s =new Label("SEX :");
+        s.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 17)); 
         ToggleGroup tg = new ToggleGroup();
         RadioButton Male=new RadioButton("Male: ");
         RadioButton Female=new RadioButton("Female");
         tg.getToggles().addAll(Male,Female);
         S.getChildren().addAll(s,Male,Female);
+        S.setPadding(new Insets(0, 20, 25, 10));
         ///////////////////phone/////////////
         HBox mobile =new HBox(30);
         Label ph=new Label("Phone : ");
-        ph.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
+        ph.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 17));
         TextField Phone=new TextField();
         Phone.setStyle("-fx-background-radius: 30px ;");
         Phone.setPromptText("Phone");
         Phone.setMaxWidth(300);
         mobile.getChildren().addAll(ph,Phone);
+        mobile.setPadding(new Insets(0, 20, 18, 10));
         ///////////////////////////////////
         HBox Occupation =new HBox(10);
         Label O=new Label("Occupation : ");
-        ph.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
+        O.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 17));
         TextField Occupat=new TextField();
         Occupat.setStyle("-fx-background-radius: 30px ;");
-        Occupat.setPromptText("Phone");
+        Occupat.setPromptText("Occupation");
         Occupat.setMaxWidth(300);
         Occupation.getChildren().addAll(O,Occupat);
+        Occupation.setPadding(new Insets(0, 20, 25, 10));
         ///////////////////////////////////////
         HBox Address =new HBox(30);
         Label A=new Label("Address : ");
-        ph.setFont(Font.font("Arial", FontWeight.LIGHT, FontPosture.ITALIC, 17));
+        A.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 17));
         TextField Addr=new TextField();
         Addr.setStyle("-fx-background-radius: 30px ;");
-        Addr.setPromptText("Phone");
+        Addr.setPromptText("Address");
         Addr.setMaxWidth(300);
         Address.getChildren().addAll(A,Addr);
+        Address.setPadding(new Insets(0, 20, 15, 10));
+
+        //////date////////////////////
+        HBox Dt =new HBox(30);
+        Label data=new Label("Date : ");
+        data.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 17));
+        DatePicker Date=new DatePicker();
+        Dt.getChildren().addAll(data,Date);
+        Dt.setPadding(new Insets(0, 20, 25, 10));
+
+        //////////////////////////////
+
+        ///////// education //////////
+          HBox Education=new HBox(20);
+        Label e1=new Label("Education: ");
+        e1.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, FontPosture.ITALIC, 16));
+        ComboBox edu=new ComboBox();
+        edu.setPrefWidth(150);
+        Education.getChildren().addAll(e1,edu);
+        Education.setPadding(new Insets(0, 20, 25, 10));
+        //////////////////////////////
+
         //////////////////button///////
         HBox B=new HBox(100);
-        B.setPadding(new Insets(10, 0, 0, 80));
-        Button D=new Button("Delete Officer");
-        Button U=new Button("Update Officer");
+        B.setPadding(new Insets(10, 0, 0, 150));
+        Button D=new Button(" Reject ");
+        Button U=new Button(" Accept ");
         D.setStyle("-fx-background-radius: 300px ;-fx-background-color:Red; ");
         U.setStyle("-fx-background-radius: 300px ;-fx-background-color:Orange;");
         D.setMinWidth(120);
@@ -234,9 +267,10 @@ public class Make_Request extends Application {
         U.setFont(Font.font("tahoma", FontWeight.BOLD, 15.5));
         U.setTextFill(javafx.scene.paint.Color.BLACK);
         B.getChildren().addAll(D,U);
+
         ////////////////////////
-        NameField.getChildren().addAll(Name,area,state,Email,User);
-        PassField.getChildren().addAll(S,Occupation,Address,mobile,password);
+        NameField.getChildren().addAll(Name,area,state,Education,Email,User);
+        PassField.getChildren().addAll(S,Occupation,Address,Dt,mobile,password);
         horiz.getChildren().addAll(NameField,PassField);
         section2.getChildren().addAll(H,horiz,B);
         all.add(section1, 0, 0);
@@ -244,7 +278,7 @@ public class Make_Request extends Application {
         all.setBackground(new Background(new BackgroundFill(javafx.scene.paint.Color.web("#a5cee5"), CornerRadii.EMPTY, Insets.EMPTY)));
 
         
-        Scene scene = new Scene(all,800,700);           
+        Scene scene = new Scene(all,900,700);           
         stage.setScene(scene);
         stage.setTitle("User Screen");
         stage.setResizable(false);

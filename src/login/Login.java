@@ -39,7 +39,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.omg.PortableServer.IdAssignmentPolicyValue;
-
+import User.User;
 /**
  *
  * @author user
@@ -127,7 +127,12 @@ public class Login extends Application{
       else if(t.equals("officer")){
       Officer c1=new Officer();
       S1.close();
-      c1.start(new Stage());  
+      c1.start(new Stage());
+      }
+      else if (t.equals("User")){
+      User c1=new User();
+      S1.close();
+      c1.start(new Stage());   
       }
             }});
         v2.getChildren().addAll(email,user,pass,P,log,img);
